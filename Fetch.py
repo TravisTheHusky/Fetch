@@ -7,6 +7,7 @@ import requests
 import re
 import urllib.request
 import os
+import time
 
 harvest_list = []
 
@@ -36,6 +37,7 @@ def fetch_image(target_array, pid):
         file_type = image_link[-4:]
         urllib.request.urlretrieve(image_link, pid + '/' + str(name) + file_type)
         name = name + 1
+        time.sleep(2)
     print('All images have been successfully downloaded from pool ' + pid)
 
 #The Pool ID is the numbers on the end of the url
